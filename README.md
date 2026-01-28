@@ -291,7 +291,7 @@ Cada paso mantendría el estado en Redux y usaría SSR cuando sea necesario.
 
 ---
 
-
+## Notas Finales WORKFRAMES-DIAGRAMA
 
 
 <img width="5387" height="5670" alt="Untitled diagram-2026-01-28-142337" src="https://github.com/user-attachments/assets/0b2a11f6-a7e2-40bb-a0b6-d54afbf54867" />
