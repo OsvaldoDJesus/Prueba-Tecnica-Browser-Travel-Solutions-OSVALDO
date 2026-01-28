@@ -5,11 +5,11 @@ import { getLocationByName } from './locationService';
 // Data Provider: Simula la persistencia y recuperación de datos de flota.
 // Implementa lógica de filtrado por geolocalización y disponibilidad.
 export function getMockCars(params: SearchParams): Car[] {
-  // Verificar si la localidad existe
+  // Validación de cobertura geográfica
   const location = getLocationByName(params.city);
 
   if (!location) {
-    return [];
+    throw new Error(`Ubicación no disponible: Actualmente no contamos con cobertura en "${params.city}".`);
   }
 
   // Datos mock realistas para un rent-a-car 

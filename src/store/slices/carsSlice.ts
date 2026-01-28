@@ -3,9 +3,6 @@ import { Car } from '@/models/Car';
 import { SearchParams } from '@/models/SearchParams';
 import { searchCars } from '@/services/carService';
 
-/**
- * Estado inicial del slice de vehículos
- */
 interface CarsState {
   results: Car[];
   selectedCar: Car | null;
@@ -40,50 +37,45 @@ export const fetchCars = createAsyncThunk(
   }
 );
 
-/**
- * carsSlice: Dominio de estado para la gestión de flota y selección de usuario.
- */
+//Dominio de estado para la gestión de flota y selección de usuario.
+
 const carsSlice = createSlice({
   name: 'cars',
   initialState,
   reducers: {
-    /**
-     * Selecciona un vehículo de los resultados
-     */
+
     selectCar: (state, action: PayloadAction<Car>) => {
       state.selectedCar = action.payload;
     },
-    /**
-     * Limpia la selección actual
-     */
+
     clearSelection: (state) => {
       state.selectedCar = null;
     },
-    /**
-     * Limpia los resultados y el estado de búsqueda
-     */
+
+    //reset
+
     clearResults: (state) => {
       state.results = [];
       state.selectedCar = null;
       state.searchParams = null;
       state.error = null;
     },
-    /**
-     * Persiste los datos inyectados desde el servidor (SSR) al store del cliente.
-     */
+
+    //Persiste los datos inyectados desde el servidor (SSR) al store del cliente.
+
     hydrateFromSSR: (
       state,
-      action: PayloadAction<{ cars: Car[]; params: SearchParams }>
+      action: PayloadAction<{ cars: Car[]; params: SearchParams; error?: string | null }>
     ) => {
       state.results = action.payload.cars;
       state.searchParams = action.payload.params;
       state.loading = false;
-      state.error = null;
+      state.error = action.payload.error || null;
     },
   },
-  /**
-   * extraReducers: Manejo de estados del ciclo de vida de promesas (Thunks).
-   */
+
+  //extraReducers: Manejo de estados del ciclo de vida de promesas .
+
   extraReducers: (builder) => {
     builder
       .addCase(fetchCars.pending, (state) => {
