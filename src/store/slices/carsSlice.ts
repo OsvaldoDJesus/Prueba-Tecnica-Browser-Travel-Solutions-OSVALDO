@@ -104,6 +104,10 @@ const carsSlice = createSlice({
   },
 });
 
+//selectCar, clearSelection, clearResults, hydrateFromSSR
+
 export const { selectCar, clearSelection, clearResults, hydrateFromSSR } =
   carsSlice.actions;
+
+
 export default carsSlice.reducer;
