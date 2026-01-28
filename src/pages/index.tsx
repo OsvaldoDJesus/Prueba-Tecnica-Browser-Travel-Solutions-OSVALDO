@@ -3,7 +3,7 @@ import { SearchForm } from '@/components/SearchForm/SearchForm';
 export default function Home() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
-      <main style={{ maxWidth: '580px', width: '100%' }}>
+      <main style={{ maxWidth: '700px', width: '100%' }}>
         <header style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h1 style={{ fontSize: '3rem', fontWeight: '900', letterSpacing: '-0.05em', color: '#0f172a', marginBottom: '1rem' }}>
             Outlet Rental Cars
@@ -13,7 +13,7 @@ export default function Home() {
           </p>
         </header>
 
-        <section style={{ background: 'white', padding: '1rem', borderRadius: '16px', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}>
+        <section style={{ background: 'white', padding: '2rem', borderRadius: '16px', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}>
           <SearchForm />
         </section>
       </main>
