@@ -45,6 +45,8 @@ Este proyecto es una prueba técnica profesional que demuestra la implementació
 2. **Instalar dependencias**
    ```bash
    npm install
+   # Si encuentras errores de dependencias (peer dependencies):
+   npm install --legacy-peer-deps
    # o
    yarn install
    ```
