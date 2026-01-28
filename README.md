@@ -294,7 +294,7 @@ Cada paso mantendría el estado en Redux y usaría SSR cuando sea necesario.
 
 ## Notas Finales WORKFRAMES-DIAGRAMA
 
-![Diagrama de arquitectura](docs/images/DiagramaWorframe.png)
+![Diagrama de arquitectura](/images/DiagramaWorframe.png)
 
 
 
